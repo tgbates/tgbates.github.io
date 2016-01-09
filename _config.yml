@@ -1,0 +1,19 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+title: Thomas G Bates
+email: tom@tgbates.com
+description: > # this means to ignore newlines until "baseurl:"
+  The blog of Thomas G Bates, in which our hero describes his ordeals with linux, javascript, reading, and anything else he believes is worth posting.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://tgbates.com" # the base hostname & protocol for your site
+twitter_username: ThomasB_AL
+github_username:  tgbates
+
+# Build settings
+markdown: kramdown
