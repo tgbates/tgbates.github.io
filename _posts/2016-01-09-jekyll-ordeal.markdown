@@ -1,3 +1,11 @@
+---
+layout: post
+title: Getting Jekyll working in Linux Mint 17.1
+date: 2016-01-09 08:00:00 -0600
+category: linux
+tags: [linux, mint, jekyll, ruby]
+---
+
 # Getting Jekyll working in Linux Mint 17.1
 
 This seems like it should have been a straightforward process but I got lost along the way.
