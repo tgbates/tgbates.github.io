@@ -7,7 +7,7 @@
 
 # Site settings
 title: Thomas G Bates
-email: tom@tgbates.com
+email: info@tgbates.com
 description: > # this means to ignore newlines until "baseurl:"
   The blog of Thomas G Bates, in which our hero describes his adventures with linux, javascript, ServiceNow, books, and anything else he believes is worth posting.
 baseurl: "" # the subpath of your site, e.g. /blog
