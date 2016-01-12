@@ -6,9 +6,56 @@
 </description>
     <link>http://tgbates.com/</link>
     <atom:link href="http://tgbates.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jan 2016 05:13:47 -0600</pubDate>
-    <lastBuildDate>Sun, 10 Jan 2016 05:13:47 -0600</lastBuildDate>
+    <pubDate>Tue, 12 Jan 2016 03:44:51 -0600</pubDate>
+    <lastBuildDate>Tue, 12 Jan 2016 03:44:51 -0600</lastBuildDate>
     <generator>Jekyll v3.0.1</generator>
+    
+      <item>
+        <title>Setting up a MIDI Keyboard in Linux Mint 17.1</title>
+        <description>&lt;h1 id=&quot;setting-up-a-midi-keyboard&quot;&gt;Setting up a MIDI Keyboard&lt;/h1&gt;
+
+&lt;p&gt;I bought a MIDI Keyboard last year and this was the process to get it working.&lt;br /&gt;
+&lt;a href=&quot;https://rafalcieslak.wordpress.com/2012/08/29/usb-midi-controllers-and-making-music-with-ubuntu/&quot;&gt;Rafal Cieslak&#39;s article&lt;/a&gt; was helpful in getting me running and understanding what I was doing.  I used another article for the setup but it is no longer online.&lt;/p&gt;
+
+&lt;h2 id=&quot;synaptic&quot;&gt;Synaptic&lt;/h2&gt;
+&lt;p&gt;install jack, jackd, qsynth and qjackctl&lt;/p&gt;
+
+&lt;h2 id=&quot;qsynth&quot;&gt;Qsynth&lt;/h2&gt;
+&lt;p&gt;click Setup -&amp;gt; Soundfonts -&amp;gt; Open and add the sf2 file in /usr/share/sounds/sf2&lt;/p&gt;
+
+&lt;p&gt;In my install, it was TimGM6mb.sf2&lt;/p&gt;
+
+&lt;p&gt;Click ‘Yes’ to restart the engine&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/qsynth_setup01.jpg&quot; alt=&quot;qsynth setup&quot; title=&quot;qsynth setup&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;plug-in-your-usb-midi-controller&quot;&gt;Plug in your USB midi controller&lt;/h2&gt;
+
+&lt;h2 id=&quot;open-qjackctl&quot;&gt;Open Qjackctl&lt;/h2&gt;
+
+&lt;p&gt;click Connect&lt;/p&gt;
+
+&lt;p&gt;Select the ALSA tab, drag your midi controller to FluidSynth&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/qjackctl_01.jpg&quot; alt=&quot;qjackctl&quot; title=&quot;qjackctl&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;play-music&quot;&gt;Play Music!&lt;/h2&gt;
+
+</description>
+        <pubDate>Mon, 11 Jan 2016 08:00:00 -0600</pubDate>
+        <link>http://tgbates.com/linux/2016/01/11/midi-keyboard.html</link>
+        <guid isPermaLink="true">http://tgbates.com/linux/2016/01/11/midi-keyboard.html</guid>
+        
+        <category>linux</category>
+        
+        <category>mint</category>
+        
+        <category>music</category>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>Getting Jekyll working in Linux Mint 17.1</title>
