@@ -13,6 +13,8 @@ I have somewhere north of 600 books (physical books) in my collection (not count
 
 # One of my favorite features in tellico is the ISBN search.  
 
+![Tellico ISBN Search](/assets/tellico_isbn_search.jpg "Tellico ISBN Search")
+
 * For modern books with ISBN numbers you type the number (or scan the barcode).  You can enter multiple numbers in a batch also.
 * Then you search that ISBN (Amazon is my preferred source--[requires an API key](http://tellico-project.org/adding-data-source) ) and can populate your record with the basic data for the book.
 * From there, you can add purchase date and price, genre and keywords, change the provided image, and add your own personal comments.
