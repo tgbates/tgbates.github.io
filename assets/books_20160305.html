@@ -1,32 +1,44 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <style type="text/css">
    body {
         font-family: sans-serif;
         
         background-color: #fff;
    }
-   #header-left {
-        margin-top: 0;
-        float: left;
-        font-size: 80%;
-        font-style: italic;
-   }
-   #header-right {
-        margin-top: 0;
-        float: right;
-        font-size: 80%;
-        font-style: italic;
+   #headerblock {
+        padding-top: 10px;
+        margin-bottom: 10px;
+        border-bottom: 1px solid black;
+        overflow: auto;
    }
    h1.colltitle {
-        margin: 0px;
-        padding-bottom: 5px;
+        padding: 4px;
         font-size: 2em;
-        text-align: center;
+        margin: 0px;
    }
-   table {
+   span.subtitle {
+        margin-left: 20px;
+        font-size: 0.8em;
+   }
+   form {
+        margin: 5px 0 0 0;
+        float: right;
+   }
+   #searchText {
+        background-color: #eee;
+   }
+   input {
+        padding: 0;
+        margin: 0 0 4px 4px;
+   }
+   .button {
+        padding: 0;
+        margin: 0 0 4px 4px;
+   }
+   table, h4 {
         margin-left: auto;
         margin-right: auto;
    }
@@ -38,308 +50,300 @@
         font-size: 1.1em;
         font-weight: bolder;
    }
-   td.fieldName {
-        margin-top: 10px;
-        margin-bottom: 2px;
-        color: #666;
+   th {
+        color: #000;
         background-color: #ccc;
-        font-size: 1em;
-        text-align: center;
-        font-style: italic;
+        border: 1px solid #999;
+        font-size: 1.1em;
+        font-weight: bold;
         padding-left: 4px;
         padding-right: 4px;
    }
-   tr.r0 {
+   thead tr {
+        cursor: pointer;
    }
-   tr.r1 {
+   tr.entry0 {
+        background-color: #eee;
+   }
+   tr.entry1 {
+   }
+   tr.hidden {
+        display: none;
+   }
+   tr.groupEntry0 {
+   }
+   tr.groupEntry1 {
         background-color: #eee;
    }
    td.field {
         margin-left: 0px;
         margin-right: 0px;
-        padding-left: 10px;
+        padding-left: 5px;
         padding-right: 5px;
         border: 1px solid #eee;
         text-align: left;
    }
+   a.sortheader {
+        text-decoration: none;
+        /*display: block;*/
+   }
    </style>
-<title>My Books</title>
+<script type="text/javascript">
+ var COL_SORT_ARRAY = new Array()
+ 
+  COL_SORT_ARRAY[0] = 0</script><script type="text/javascript" src="books_20160407_files/tellico2html.js"></script><title>My Books </title>
 </head>
 <body>
-<p id="header-left">book_library.tc</p>
-<p id="header-right">Saturday, March 05, 2016</p>
-<h1 class="colltitle">My Books</h1>
-<table><tbody>
-<tr><td class="groupName">(Empty)</td></tr>
-<tr class="r1"><td class="field">Waiting on God [Paperback]</td></tr>
-<tr class="r0"><td class="field">SuperFreakonomics, Illustrated Edition: Global Cooling, Patriotic Prostitutes, and Why Suicide Bombers Should Buy Life Insurance</td></tr>
-<tr class="r1"><td class="field">A Dance with Dragons (A Song of Ice and Fire)</td></tr>
-<tr class="r0"><td class="field">Drive to the East (Settling Accounts Trilogy, Book 2)</td></tr>
-<tr class="r1"><td class="field">An Angel to Watch Over Me: True Stories of Children's Encounters with Angels</td></tr>
-<tr class="r0"><td class="field">Get More Money on Your Next Job: 25 Proven Strategies for Getting More Money, Better Benefits, and Greater Job Security</td></tr>
-<tr class="r1"><td class="field">We Hold These Truths and More: Further Catholic Reflections on the American Proposition : The Thought of Fr. John Courtney Murray, S.J. and Its Rele</td></tr>
-<tr><td class="groupName">Apologetics</td></tr>
-<tr class="r1"><td class="field">What Is Marriage?: Man and Woman: A Defense</td></tr>
-<tr class="r0"><td class="field">Pope Fiction: Answers to 30 Myths and Misconceptions About the Papacy</td></tr>
-<tr class="r1"><td class="field">What Catholics Really Believe: Answers to Common Misconceptions About the Faith</td></tr>
-<tr class="r0"><td class="field">In Soft Garments: Classic Catholic Apologetics</td></tr>
-<tr class="r1"><td class="field">Rapture Trap: A Catholic Response to "End Times" Fever, The</td></tr>
-<tr class="r0"><td class="field">Catholicism and Fundamentalism: The Attack on "Romanism" by "Bible Christians"</td></tr>
-<tr class="r1"><td class="field">Memorize the Reasons!</td></tr>
-<tr><td class="groupName">Autobiography</td></tr>
-<tr class="r1"><td class="field">Memoirs Of A Medieval Woman: The Life And Times Of Margery Kempe</td></tr>
-<tr class="r0"><td class="field">Confessions of St. Augustine (Paraclete Living Library)</td></tr>
-<tr class="r1"><td class="field">Orthodoxy</td></tr>
-<tr><td class="groupName">Biography</td></tr>
-<tr class="r1"><td class="field">Mother Teresa: A Complete Authorized Biography</td></tr>
-<tr class="r0"><td class="field">My Life with Mother Angelica</td></tr>
-<tr class="r1"><td class="field">Bear: The Hard Life and Good Times of Alabama's Coach Bryant</td></tr>
-<tr class="r0"><td class="field">Rees Howells: Intercessor</td></tr>
-<tr><td class="groupName">Career</td></tr>
-<tr class="r1"><td class="field">Resumes Don't Get Jobs: The Realities and Myths of Job Hunting</td></tr>
-<tr><td class="groupName">Catholic</td></tr>
-<tr class="r1"><td class="field">Handbook for Today's Catholic</td></tr>
-<tr class="r0"><td class="field">This Is the Faith: A Complete Explanation of the Catholic Faith</td></tr>
-<tr class="r1"><td class="field">Getting the Marriage Conversation Right: A Guide for Effective Dialogue</td></tr>
-<tr class="r0"><td class="field">7 Secrets of Confession</td></tr>
-<tr class="r1"><td class="field">A Pocket Guide to Confession</td></tr>
-<tr class="r0"><td class="field">Protestant's Dilemma: How the Reformation's Shocking Consequences Point to the Truth of Catholicism, The</td></tr>
-<tr class="r1"><td class="field">A Key to the Doctrine of the Eucharist</td></tr>
-<tr class="r0"><td class="field">Catechism of the Catholic Church</td></tr>
-<tr class="r1"><td class="field">Handbook of Catholic Apologetics: Reasoned Answers to Questions of Faith</td></tr>
-<tr class="r0"><td class="field">Search and Rescue: How to Bring Your Family and Friends Into or Back Into the Catholic Church</td></tr>
-<tr class="r1"><td class="field">Surprised by Truth: 11 Converts Give the Biblical and Historical Reasons for Becoming Catholic</td></tr>
-<tr class="r0"><td class="field">Memorize the Faith! (and Most Anything Else): Using the Methods of the Great Catholic Medieval Memory Masters</td></tr>
-<tr class="r1"><td class="field">Behold Your Mother</td></tr>
-<tr class="r0"><td class="field">Church: Unlocking the Secrets to the Places Catholics Call Home, The</td></tr>
-<tr class="r1"><td class="field">Rome Sweet Home: Our Journey to Catholicism</td></tr>
-<tr><td class="groupName">Christianity</td></tr>
-<tr class="r1"><td class="field">God That Did Not Fail: How Religion Built and Sustains the West, The</td></tr>
-<tr class="r0"><td class="field">We Hold These Truths and More: Further Catholic Reflections on the American Proposition : The Thought of Fr. John Courtney Murray, S.J. and Its Rele</td></tr>
-<tr class="r1"><td class="field">Come and See: A Piligrim's Picture Book Shrine of the Most Blessed Sacrament</td></tr>
-<tr class="r0"><td class="field">Christianity Through the Centuries: A History of the Christian Church</td></tr>
-<tr class="r1"><td class="field">History of Christianity</td></tr>
-<tr class="r0"><td class="field">Burden: A Warning of Things to Come, The</td></tr>
-<tr class="r1"><td class="field">A Still, Small Voice:</td></tr>
-<tr class="r0"><td class="field">Everlasting Man (Dover Books on Western Philosophy), The</td></tr>
-<tr class="r1"><td class="field">Third Day, The</td></tr>
-<tr class="r0"><td class="field">Lost Works of Ronald Knox, The</td></tr>
-<tr class="r1"><td class="field">Mary-Virgin, Mother, and Queen: A Bible Study Guide for Catholics</td></tr>
-<tr class="r0"><td class="field">Heretics</td></tr>
-<tr class="r1"><td class="field">Mere Christianity</td></tr>
-<tr><td class="groupName">Church Fathers</td></tr>
-<tr class="r1"><td class="field">Apostolic Fathers: Greek Texts and English Translations, The</td></tr>
-<tr class="r0"><td class="field">Confessions of St. Augustine (Paraclete Living Library)</td></tr>
-<tr><td class="groupName">Computer Programming</td></tr>
-<tr class="r1"><td class="field">Teach Yourself C Programming in 21 Days (Sams Teach Yourself)</td></tr>
-<tr><td class="groupName">English</td></tr>
-<tr class="r1"><td class="field">Superior Person's Book of Words, The</td></tr>
-<tr class="r0"><td class="field">On Englishing the Bible</td></tr>
-<tr><td class="groupName">Etiquette</td></tr>
-<tr class="r1"><td class="field">Emily Post's Etiquette</td></tr>
-<tr><td class="groupName">Eucharist</td></tr>
-<tr class="r1"><td class="field">A Key to the Doctrine of the Eucharist</td></tr>
-<tr><td class="groupName">Fantasy</td></tr>
-<tr class="r1"><td class="field">Books of the South: Tales of the Black Company (Shadow Games / Dreams of Steel / The Silver Spike)</td></tr>
-<tr><td class="groupName">Fiction</td></tr>
-<tr class="r1"><td class="field">Bringing Out the Dead</td></tr>
-<tr class="r0"><td class="field">Charles Dickens Four Novels: Oliver Twist, A Tale of Two Cities, Great Expectations, A Christmas Carol</td></tr>
-<tr class="r1"><td class="field">A Land Without Sin: A Novel</td></tr>
-<tr class="r0"><td class="field">Death of a Pope: A Novel, The</td></tr>
-<tr class="r1"><td class="field">Sorcerer's House, The</td></tr>
-<tr class="r0"><td class="field">Lord of the World [Facsimile of 1907 First British Edition]</td></tr>
-<tr><td class="groupName">Fiction - Historical</td></tr>
-<tr class="r1"><td class="field">Sackett's Land</td></tr>
-<tr class="r0"><td class="field">Lonesome Gods, The</td></tr>
-<tr class="r1"><td class="field">Agincourt: A Novel</td></tr>
-<tr class="r0"><td class="field">Sackett Novels of Louis L'Amour, 4 Vol. Set, The</td></tr>
-<tr class="r1"><td class="field">Tai-Pan</td></tr>
-<tr><td class="groupName">Finance</td></tr>
-<tr class="r1"><td class="field">Extraordinary Popular Delusions &amp; the Madness of Crowds</td></tr>
-<tr class="r0"><td class="field">Comeback America</td></tr>
-<tr class="r1"><td class="field">Mobs, Messiahs, and Markets: Surviving the Public Spectacle in Finance and Politics</td></tr>
-<tr><td class="groupName">Firearms</td></tr>
-<tr class="r1"><td class="field">Sixguns by Keith: The Standard Reference Work [Illustrated Edition]</td></tr>
-<tr class="r0"><td class="field">Shooter's Bible: The World's Bestselling Firearms Reference</td></tr>
-<tr><td class="groupName">French</td></tr>
-<tr class="r1"><td class="field">NTC's Easy French &amp; English Dictionary (English and French Edition)</td></tr>
-<tr><td class="groupName">Heresy</td></tr>
-<tr class="r1"><td class="field">Book of Mormon, The</td></tr>
-<tr><td class="groupName">History</td></tr>
-<tr class="r1"><td class="field">Memoirs Of A Medieval Woman: The Life And Times Of Margery Kempe</td></tr>
-<tr class="r0"><td class="field">Life of the Virgin: Maximus the Confessor, The</td></tr>
-<tr class="r1"><td class="field">Works of Flavius Josephus: Comprising the Antiquities of the Jews; A History of the Jewish Wars; and Life of Flavius Josephus, Written By Himself. Translated from the Original Greek By William Whiston, A. M., The</td></tr>
-<tr class="r0"><td class="field">Extraordinary Popular Delusions &amp; the Madness of Crowds</td></tr>
-<tr class="r1"><td class="field">God That Did Not Fail: How Religion Built and Sustains the West, The</td></tr>
-<tr class="r0"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role From the Fall of Rome to the Rise of Medieval Europe</td></tr>
-<tr class="r1"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role from the Fall of Rome to the Rise of Medieval Europe</td></tr>
-<tr class="r0"><td class="field">Oxford Companion to United States History (Oxford Companions), The</td></tr>
-<tr class="r1"><td class="field">From Dawn to Decadence: 1500 to the Present: 500 Years of Western Cultural Life</td></tr>
-<tr class="r0"><td class="field">Ten Dates Every Catholic Should Know: The Divine Surprises and Chastisements That Shaped the Church and Changed the World</td></tr>
-<tr class="r1"><td class="field">Glory of the Crusades, The</td></tr>
-<tr class="r0"><td class="field">Christianizing the Roman Empire (A.D. 100-400)</td></tr>
-<tr class="r1"><td class="field">Stones Laid Before the Lord: A History of Monastic Architecture (Cistercian Studies)</td></tr>
-<tr><td class="groupName">Horror</td></tr>
-<tr class="r1"><td class="field">20th Century Ghosts</td></tr>
-<tr><td class="groupName">Horticulture</td></tr>
-<tr class="r1"><td class="field">Bonsai for Americans</td></tr>
-<tr class="r0"><td class="field">Garden Birds: How to Attract Birds to Your Garden</td></tr>
-<tr><td class="groupName">Hymns</td></tr>
-<tr class="r1"><td class="field">Adoremus Hymnal: Pew Edition</td></tr>
-<tr><td class="groupName">Information Theory</td></tr>
-<tr class="r1"><td class="field">Black Swan: The Impact of the Highly Improbable (Incerto), The</td></tr>
-<tr><td class="groupName">Ireland</td></tr>
-<tr class="r1"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role From the Fall of Rome to the Rise of Medieval Europe</td></tr>
-<tr><td class="groupName">Japanese</td></tr>
-<tr class="r1"><td class="field">Webster's New World Compact Japanese Dictionary: Japanese/English, English/Japanese (Japanese Edition)</td></tr>
-<tr><td class="groupName">Latin</td></tr>
-<tr class="r1"><td class="field">Wheelock's Latin 7th Edition (The Wheelock's Latin Series)</td></tr>
-<tr class="r0"><td class="field">Auricula Meretricula</td></tr>
-<tr><td class="groupName">Liturgy</td></tr>
-<tr class="r1"><td class="field">Celebrating Mass: A Guide for Understanding and Loving the Mass More Deeply</td></tr>
-<tr class="r0"><td class="field">How-To Book of the Mass: Everything You Need to Know but No One Ever Taught You, The</td></tr>
-<tr class="r1"><td class="field">General Instruction of the Roman Missal (Rev. Ed.) (Liturgy Documentary), The</td></tr>
-<tr><td class="groupName">Lives of the Saints</td></tr>
-<tr class="r1"><td class="field">Mother Teresa: A Complete Authorized Biography</td></tr>
-<tr class="r0"><td class="field">Life of the Virgin: Maximus the Confessor, The</td></tr>
-<tr class="r1"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role From the Fall of Rome to the Rise of Medieval Europe</td></tr>
-<tr><td class="groupName">Manliness</td></tr>
-<tr class="r1"><td class="field">Be A Man!: Becoming the Man God Created You to Be</td></tr>
-<tr><td class="groupName">Manuscripts</td></tr>
-<tr class="r1"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role From the Fall of Rome to the Rise of Medieval Europe</td></tr>
-<tr><td class="groupName">Marriage</td></tr>
-<tr class="r1"><td class="field">Getting the Marriage Conversation Right: A Guide for Effective Dialogue</td></tr>
-<tr><td class="groupName">Martial Arts</td></tr>
-<tr class="r1"><td class="field">Book of Five Rings (The Way of the Warrior Series), The</td></tr>
-<tr><td class="groupName">Meditation</td></tr>
-<tr class="r1"><td class="field">Poetry of Pope John Paul II Roman Triptych Meditations, The</td></tr>
-<tr class="r0"><td class="field">Word of God (Spiritual Thoughts), The</td></tr>
-<tr class="r1"><td class="field">Benedictus: Day by Day with Pope Benedict XVI</td></tr>
-<tr class="r0"><td class="field">Fr. Larry Richards' Scripture Calendar: No Bible, No Breakfast; No Bible, No Bed</td></tr>
-<tr class="r1"><td class="field">Augustine Day by Day (Spiritual Life)</td></tr>
-<tr class="r0"><td class="field">Sermon in a Sentence - St. John Paul II</td></tr>
-<tr><td class="groupName">Mystery</td></tr>
-<tr class="r1"><td class="field">Favorite Father Brown Stories</td></tr>
-<tr><td class="groupName">Numismatics</td></tr>
-<tr class="r1"><td class="field">A Guide Book of United States Coins 2008</td></tr>
-<tr class="r0"><td class="field">Top 100 Morgan Dollar Varieties: The VAM Keys 4th Edition, The</td></tr>
-<tr class="r1"><td class="field">Cherrypickers' Guide to Rare Die Varieties of United States Coins, Volume I</td></tr>
-<tr><td class="groupName">Ornithology</td></tr>
-<tr class="r1"><td class="field">Garden Birds: How to Attract Birds to Your Garden</td></tr>
-<tr><td class="groupName">Outdoors - Survival</td></tr>
-<tr class="r1"><td class="field">Bushcraft 101: A Field Guide to the Art of Wilderness Survival</td></tr>
-<tr><td class="groupName">Poetry</td></tr>
-<tr class="r1"><td class="field">Poetry of Pope John Paul II Roman Triptych Meditations, The</td></tr>
-<tr class="r0"><td class="field">Macaulay's Lays of Ancient Rome, and Other Poems, (Eclectic English Classics)</td></tr>
-<tr class="r1"><td class="field">Classic French Love Poems</td></tr>
-<tr><td class="groupName">Politics</td></tr>
-<tr class="r1"><td class="field">Comeback America</td></tr>
-<tr><td class="groupName">Prayer and Devotions</td></tr>
-<tr class="r1"><td class="field">Let Us Become Friends of Jesus</td></tr>
-<tr class="r0"><td class="field">A Catholic Book of Hours and Other Devotions</td></tr>
-<tr class="r1"><td class="field">Pocket Book of Catholic Novenas (Pocket Book Series)</td></tr>
-<tr class="r0"><td class="field">St. Pio of Pietrelcina Novena and Prayers</td></tr>
-<tr class="r1"><td class="field">St. Patrick Novena and Prayers</td></tr>
-<tr class="r0"><td class="field">Prayers of the Saints: An Inspired Collection of Holy Wisdom</td></tr>
-<tr class="r1"><td class="field">Pocket Book of Catholic Devotions (Pocket Book Series)</td></tr>
-<tr class="r0"><td class="field">Pocket Book of Catholic Prayers (Pocket Book Series)</td></tr>
-<tr class="r1"><td class="field">Handbook of Prayers (Large Print, Genuine Leather)</td></tr>
-<tr class="r0"><td class="field">St. Joseph Pocket Prayer Book</td></tr>
-<tr class="r1"><td class="field">Blessings and Prayer for Home and Family</td></tr>
-<tr class="r0"><td class="field">Catholic Household Bless &amp; Prayer/Rev Ed</td></tr>
-<tr class="r1"><td class="field">Manual for Spiritual Warfare</td></tr>
-<tr class="r0"><td class="field">Catholic Book of Prayers - Large Print</td></tr>
-<tr class="r1"><td class="field">Catholic Book of Prayers - Large Print</td></tr>
-<tr class="r0"><td class="field">Aquinas Prayer Book: The Prayers and Hymns of St. Thomas Aquinas, The</td></tr>
-<tr class="r1"><td class="field">Prayers and Personal Devotions of Mother Angelica, The</td></tr>
-<tr class="r0"><td class="field">Augustine Day by Day (Spiritual Life)</td></tr>
-<tr class="r1"><td class="field">Holy Hour of Reparation to the Sacred Heart of Jesus</td></tr>
-<tr class="r0"><td class="field">Little Office of the Blessed Virgin Mary (English and Latin Edition), The</td></tr>
-<tr><td class="groupName">Pseudoscience</td></tr>
-<tr class="r1"><td class="field">Colony: Earth</td></tr>
-<tr><td class="groupName">Quotations</td></tr>
-<tr class="r1"><td class="field">I Just Wanted to Say I Love You</td></tr>
-<tr><td class="groupName">Reconciliation</td></tr>
-<tr class="r1"><td class="field">A Pocket Guide to Confession</td></tr>
-<tr><td class="groupName">Relationships</td></tr>
-<tr class="r1"><td class="field">Men Are Like Waffles--Women Are Like Spaghetti: Understanding and Delighting in Your Differences</td></tr>
-<tr><td class="groupName">Religious Nonfiction</td></tr>
-<tr class="r1"><td class="field">Not Peace But a Sword: The Great Chasm Between Christianity and Islam</td></tr>
-<tr><td class="groupName">Sacraments</td></tr>
-<tr class="r1"><td class="field">Handbook for Today's Catholic</td></tr>
-<tr><td class="groupName">Saints</td></tr>
-<tr class="r1"><td class="field">Cult of the Saints: Its Rise and Function in Latin Christianity (The Haskell Lectures on History of Religions), The</td></tr>
-<tr><td class="groupName">Science</td></tr>
-<tr class="r1"><td class="field">Science and Unreason</td></tr>
-<tr><td class="groupName">Science Fiction</td></tr>
-<tr class="r1"><td class="field">Pirate Freedom (Sci Fi Essential Books)</td></tr>
-<tr class="r0"><td class="field">Genesis</td></tr>
-<tr class="r1"><td class="field">Claw of the Conciliator, The</td></tr>
-<tr class="r0"><td class="field">Sword of the Lictor (The Book of the New Sun, Vol 3), The</td></tr>
-<tr class="r1"><td class="field">Shadow of the Torturer (Timescape), The</td></tr>
-<tr class="r0"><td class="field">Shadow of the Torturer (The Book of the New Sun, 1), The</td></tr>
-<tr class="r1"><td class="field">Citadel of The Autarch, The</td></tr>
-<tr><td class="groupName">Scripture</td></tr>
-<tr class="r1"><td class="field">Ignatius Catholic Study Bible New Testament</td></tr>
-<tr class="r0"><td class="field">Revised Standard Version Catholic Bible, The</td></tr>
-<tr class="r1"><td class="field">Holy Bible Douay Rheims Edition, The</td></tr>
-<tr class="r0"><td class="field">Good News Bible - Today's English Version with Deuterocanonicals/Apocrypha</td></tr>
-<tr class="r1"><td class="field">Holy Bible [Douay Version] Translated from the Latin Vulgate...; the Old Testament, First Published by the English College at Douay, A.D. 1609, and the New Testament, First Published by the English College at Rheims, A.D. 1582, The</td></tr>
-<tr class="r0"><td class="field">Pocket Gospels and Acts of the Apostles</td></tr>
-<tr class="r1"><td class="field">Bartlett's Bible Quotations</td></tr>
-<tr class="r0"><td class="field">New Catholic Answer Bible-NABRE-Librosario</td></tr>
-<tr class="r1"><td class="field">New Testament of The Jerusalem Bible, The</td></tr>
-<tr class="r0"><td class="field">Knox Bible, The</td></tr>
-<tr class="r1"><td class="field">Holy Bible: The Old Testament Douay Version and The New Testament Confraternity Version, The</td></tr>
-<tr class="r0"><td class="field">Didache Bible: Ignatius Bible (RSV-2CE) Edition (Leather), The</td></tr>
-<tr class="r1"><td class="field">Jerusalem Bible (Standard Edition), The</td></tr>
-<tr class="r0"><td class="field">Holy Bible: Douay-Rheims Version, The</td></tr>
-<tr><td class="groupName">Scripture Study</td></tr>
-<tr class="r1"><td class="field">Ignatius Catholic Study Bible New Testament</td></tr>
-<tr class="r0"><td class="field">St. Paul: A Bible Study Guide for Catholics</td></tr>
-<tr class="r1"><td class="field">A Textual Concordance of the Holy Scriptures</td></tr>
-<tr><td class="groupName">Self-Help</td></tr>
-<tr class="r1"><td class="field">Stop Clutter from Stealing Your Life: Discover Why You Clutter and How You Can Stop</td></tr>
-<tr class="r0"><td class="field">Getting Things Done: The Art of Stress-Free Productivity</td></tr>
-<tr class="r1"><td class="field">Living Forward: A Proven Plan to Stop Drifting and Get the Life You Want</td></tr>
-<tr class="r0"><td class="field">Time Management for Catholics: Make the Most of Every Second by Putting Christ First</td></tr>
-<tr class="r1"><td class="field">Benjamin Franklin's the Art of Virtue: His Formula for Successful Living</td></tr>
-<tr><td class="groupName">Spiritual Development</td></tr>
-<tr class="r1"><td class="field">Discernment of Spirits: An Ignatian Guide for Everyday Living, The</td></tr>
-<tr class="r0"><td class="field">Way of Perfection (Dover Thrift Editions), The</td></tr>
-<tr class="r1"><td class="field">Confessions of St. Augustine (Paraclete Living Library)</td></tr>
-<tr class="r0"><td class="field">Way, The</td></tr>
-<tr class="r1"><td class="field">Winning the Battle Against Sin: Hope-Filled Lessons from the Bible</td></tr>
-<tr class="r0"><td class="field">How to Listen When God Is Speaking: A Guide for Modern-Day Catholics</td></tr>
-<tr class="r1"><td class="field">Reed of God (Hart Library)</td></tr>
-<tr class="r0"><td class="field">Interior Castle (Dover Thrift Editions)</td></tr>
-<tr class="r1"><td class="field">On Your Confirmation Promises for Guys: From the New International Version</td></tr>
-<tr class="r0"><td class="field">Fulfillment of All Desire, The</td></tr>
-<tr class="r1"><td class="field">Manual for Spiritual Warfare</td></tr>
-<tr class="r0"><td class="field">Be A Man!: Becoming the Man God Created You to Be</td></tr>
-<tr class="r1"><td class="field">Mother Angelica's Little Book of Life Lessons and Everyday Spirituality</td></tr>
-<tr class="r0"><td class="field">How to Be a Monastic and Not Leave Your Day Job: An Invitation to Oblate Life (Voices from the Monastery)</td></tr>
-<tr class="r1"><td class="field">True Devotion To Mary</td></tr>
-<tr><td class="groupName">Theology</td></tr>
-<tr class="r1"><td class="field">Behold the Pierced One</td></tr>
-<tr class="r0"><td class="field">Aquinas's Shorter Summa: Saint Thomas's Own Concise Version of His Summa Theologica</td></tr>
-<tr class="r1"><td class="field">Called to Communion: Understanding the Church Today</td></tr>
-<tr class="r0"><td class="field">One-Minute Aquinas</td></tr>
-<tr><td class="groupName">Vocabulary</td></tr>
-<tr class="r1"><td class="field">Superior Person's Book of Words, The</td></tr>
-<tr><td class="groupName">Western</td></tr>
-<tr class="r1"><td class="field">Sacketts: Beginnings of a Dynasty, The</td></tr>
-<tr class="r0"><td class="field">Soft Metal (Leisure Western)</td></tr>
-<tr class="r1"><td class="field">Telegraph Days: A Novel</td></tr>
-<tr><td class="groupName">Western Civilization</td></tr>
-<tr class="r1"><td class="field">God That Did Not Fail: How Religion Built and Sustains the West, The</td></tr>
-<tr class="r0"><td class="field">We Hold These Truths and More: Further Catholic Reflections on the American Proposition : The Thought of Fr. John Courtney Murray, S.J. and Its Rele</td></tr>
-<tr class="r1"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role From the Fall of Rome to the Rise of Medieval Europe</td></tr>
-<tr><td class="groupName">Woodworking</td></tr>
-<tr class="r1"><td class="field">How to Build and Furnish a Log Cabin: The Easy, Natural Way Using Only Hand Tools and the Woods Around You</td></tr>
-<tr class="r0"><td class="field">Old Ways of Working Wood: The Techniques and Tools of a Time Honored Craft</td></tr>
-<tr><td class="groupName">Writing</td></tr>
-<tr class="r1"><td class="field">How to Tell a Story: The Secrets of Writing Captivating Tales</td></tr>
-</tbody></table>
+<div id="headerblock">
+<form onsubmit="return false" action=""><div>
+<input type="text" id="searchText"><input class="button" type="button" onclick="searchRows()" value="Search"><input class="button" type="button" onclick="showAll()" value="Clear">
+</div></form>
+<h1 class="colltitle">My Books<span class="subtitle"></span>
+</h1>
+</div>
+<table class="sortable" id="table1">
+<thead><tr><th>Title</th></tr></thead>
+<tbody>
+<tr class="entry1"><td class="field">20th Century Ghosts</td></tr>
+<tr class="entry0"><td class="field">7 Secrets of Confession</td></tr>
+<tr class="entry1"><td class="field">A Brief History of Time: From the Big Bang to Black Holes</td></tr>
+<tr class="entry0"><td class="field">A Catholic Book of Hours and Other Devotions</td></tr>
+<tr class="entry1"><td class="field">A Dance with Dragons (A Song of Ice and Fire)</td></tr>
+<tr class="entry0"><td class="field">A Distant Mirror by Tuchman Barbara W. (1979) Paperback</td></tr>
+<tr class="entry1"><td class="field">A Guide Book of United States Coins 2008</td></tr>
+<tr class="entry0"><td class="field">A Key to the Doctrine of the Eucharist</td></tr>
+<tr class="entry1"><td class="field">A Land Without Sin: A Novel</td></tr>
+<tr class="entry0"><td class="field">A Pocket Guide to Confession</td></tr>
+<tr class="entry1"><td class="field">A Still, Small Voice:</td></tr>
+<tr class="entry0"><td class="field">A Textual Concordance of the Holy Scriptures</td></tr>
+<tr class="entry1"><td class="field">Adoremus Hymnal: Pew Edition</td></tr>
+<tr class="entry0"><td class="field">Agincourt: A Novel</td></tr>
+<tr class="entry1"><td class="field">An Angel to Watch Over Me: True Stories of Children's Encounters with Angels</td></tr>
+<tr class="entry0"><td class="field">Aquinas's Shorter Summa: Saint Thomas's Own Concise Version of His Summa Theologica</td></tr>
+<tr class="entry1"><td class="field">Asimov's Biographical Encyclopedia of Science and Technology</td></tr>
+<tr class="entry0"><td class="field">Augustine Day by Day (Spiritual Life)</td></tr>
+<tr class="entry1"><td class="field">Auricula Meretricula</td></tr>
+<tr class="entry0"><td class="field">Banewreaker: Volume I of The Sundering</td></tr>
+<tr class="entry1"><td class="field">Bartlett's Bible Quotations</td></tr>
+<tr class="entry0"><td class="field">Be A Man!: Becoming the Man God Created You to Be</td></tr>
+<tr class="entry1"><td class="field">Bear: The Hard Life and Good Times of Alabama's Coach Bryant</td></tr>
+<tr class="entry0"><td class="field">Behold Your Mother</td></tr>
+<tr class="entry1"><td class="field">Behold the Pierced One</td></tr>
+<tr class="entry0"><td class="field">Benedictus: Day by Day with Pope Benedict XVI</td></tr>
+<tr class="entry1"><td class="field">Benjamin Franklin's the Art of Virtue: His Formula for Successful Living</td></tr>
+<tr class="entry0"><td class="field">Blessings and Prayer for Home and Family</td></tr>
+<tr class="entry1"><td class="field">Bonsai for Americans</td></tr>
+<tr class="entry0"><td class="field">Books of the South: Tales of the Black Company (Shadow Games / Dreams of Steel / The Silver Spike)</td></tr>
+<tr class="entry1"><td class="field">Books of the South: Tales of the Black Company (Shadow Games / Dreams of Steel / The Silver Spike)</td></tr>
+<tr class="entry0"><td class="field">Bringing Out the Dead</td></tr>
+<tr class="entry1"><td class="field">Bushcraft 101: A Field Guide to the Art of Wilderness Survival</td></tr>
+<tr class="entry0"><td class="field">By Anne Rice - Christ the Lord: Out of Egypt: A Novel (1/27/08)</td></tr>
+<tr class="entry1"><td class="field">Called to Communion: Understanding the Church Today</td></tr>
+<tr class="entry0"><td class="field">Catechism of the Catholic Church</td></tr>
+<tr class="entry1"><td class="field">Catholic Book of Prayers - Large Print</td></tr>
+<tr class="entry0"><td class="field">Catholic Book of Prayers - Large Print</td></tr>
+<tr class="entry1"><td class="field">Catholic Household Bless &amp; Prayer/Rev Ed</td></tr>
+<tr class="entry0"><td class="field">Catholicism and Fundamentalism: The Attack on "Romanism" by "Bible Christians"</td></tr>
+<tr class="entry1"><td class="field">Celebrating Mass: A Guide for Understanding and Loving the Mass More Deeply</td></tr>
+<tr class="entry0"><td class="field">Charles Dickens Four Novels: Oliver Twist, A Tale of Two Cities, Great Expectations, A Christmas Carol</td></tr>
+<tr class="entry1"><td class="field">Cherrypickers' Guide to Rare Die Varieties of United States Coins, Volume I</td></tr>
+<tr class="entry0"><td class="field">Christianity Through the Centuries: A History of the Christian Church</td></tr>
+<tr class="entry1"><td class="field">Christianizing the Roman Empire (A.D. 100-400)</td></tr>
+<tr class="entry0"><td class="field">Classic French Love Poems</td></tr>
+<tr class="entry1"><td class="field">Coffee Love: 50 Ways to Drink Your Java</td></tr>
+<tr class="entry0"><td class="field">Colony: Earth</td></tr>
+<tr class="entry1"><td class="field">Come and See: A Piligrim's Picture Book Shrine of the Most Blessed Sacrament</td></tr>
+<tr class="entry0"><td class="field">Comeback America</td></tr>
+<tr class="entry1"><td class="field">Confessions of St. Augustine (Paraclete Living Library)</td></tr>
+<tr class="entry0"><td class="field">Dragon's Gold (Kelvin of Rud)</td></tr>
+<tr class="entry1"><td class="field">Drive to the East (Settling Accounts Trilogy, Book 2)</td></tr>
+<tr class="entry0"><td class="field">Emily Post's Etiquette</td></tr>
+<tr class="entry1"><td class="field">Encyclopedia of Card Tricks</td></tr>
+<tr class="entry0"><td class="field">Explorer's Guide 50 Hikes in Alabama (Explorer's 50 Hikes)</td></tr>
+<tr class="entry1"><td class="field">Extraordinary Popular Delusions &amp; the Madness of Crowds</td></tr>
+<tr class="entry0"><td class="field">Favorite Father Brown stories</td></tr>
+<tr class="entry1"><td class="field">Fr. Larry Richards' Scripture Calendar: No Bible, No Breakfast; No Bible, No Bed</td></tr>
+<tr class="entry0"><td class="field">From Dawn to Decadence: 1500 to the Present: 500 Years of Western Cultural Life</td></tr>
+<tr class="entry1"><td class="field">Garden Birds: How to Attract Birds to Your Garden</td></tr>
+<tr class="entry0"><td class="field">Genesis</td></tr>
+<tr class="entry1"><td class="field">Genius: A Mosaic of One Hundred Exemplary Creative Minds</td></tr>
+<tr class="entry0"><td class="field">Get More Money on Your Next Job: 25 Proven Strategies for Getting More Money, Better Benefits, and Greater Job Security</td></tr>
+<tr class="entry1"><td class="field">Getting Things Done: The Art of Stress-Free Productivity</td></tr>
+<tr class="entry0"><td class="field">Getting the Marriage Conversation Right: A Guide for Effective Dialogue</td></tr>
+<tr class="entry1"><td class="field">Good News Bible - Today's English Version with Deuterocanonicals/Apocrypha</td></tr>
+<tr class="entry0"><td class="field">Handbook for Today's Catholic</td></tr>
+<tr class="entry1"><td class="field">Handbook of Catholic Apologetics: Reasoned Answers to Questions of Faith</td></tr>
+<tr class="entry0"><td class="field">Handbook of Prayers (Large Print, Genuine Leather)</td></tr>
+<tr class="entry1"><td class="field">Handy Weather Answer Book</td></tr>
+<tr class="entry0"><td class="field">Heretics</td></tr>
+<tr class="entry1"><td class="field">History of Christianity</td></tr>
+<tr class="entry0"><td class="field">Holy Hour of Reparation to the Sacred Heart of Jesus</td></tr>
+<tr class="entry1"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role From the Fall of Rome to the Rise of Medieval Europe</td></tr>
+<tr class="entry0"><td class="field">How the Irish Saved Civilization: The Untold Story of Ireland's Heroic Role from the Fall of Rome to the Rise of Medieval Europe</td></tr>
+<tr class="entry1"><td class="field">How to Be a Monastic and Not Leave Your Day Job: An Invitation to Oblate Life (Voices from the Monastery)</td></tr>
+<tr class="entry0"><td class="field">How to Build and Furnish a Log Cabin: The easy, natural way using only hand tools and the woods around you</td></tr>
+<tr class="entry1"><td class="field">How to Listen When God Is Speaking: A Guide for Modern-Day Catholics</td></tr>
+<tr class="entry0"><td class="field">How to Tell a Story: The Secrets of Writing Captivating Tales</td></tr>
+<tr class="entry1"><td class="field">I Just Wanted to Say I Love You</td></tr>
+<tr class="entry0"><td class="field">Ignatius Catholic Study Bible New Testament</td></tr>
+<tr class="entry1"><td class="field">In Soft Garments: Classic Catholic Apologetics</td></tr>
+<tr class="entry0"><td class="field">Interior Castle (Dover Thrift Editions)</td></tr>
+<tr class="entry1"><td class="field">Isaac Asimov's Book of Facts by Asimov, Isaac published by Random House Value Pub (1981)</td></tr>
+<tr class="entry0"><td class="field">James and Jones' American Geography. Inventory &amp; prospect. 1954 Edition</td></tr>
+<tr class="entry1"><td class="field">Job: A Comedy of Justice</td></tr>
+<tr class="entry0"><td class="field">Legends II: New Short Novels by the Masters of Modern Fantasy</td></tr>
+<tr class="entry1"><td class="field">Legends: Stories By The Masters of Modern Fantasy</td></tr>
+<tr class="entry0"><td class="field">Let us become friends of Jesus</td></tr>
+<tr class="entry1"><td class="field">Living Forward: A Proven Plan to Stop Drifting and Get the Life You Want</td></tr>
+<tr class="entry0"><td class="field">Lord of the World [Facsimile of 1907 First British Edition]</td></tr>
+<tr class="entry1"><td class="field">Lythande (Daw science fiction)</td></tr>
+<tr class="entry0"><td class="field">Macaulay's Lays of ancient Rome, and other poems, (Eclectic English classics)</td></tr>
+<tr class="entry1"><td class="field">Mad Ship (The Liveship Traders, Book 2)</td></tr>
+<tr class="entry0"><td class="field">Manual for Spiritual Warfare</td></tr>
+<tr class="entry1"><td class="field">Mary-Virgin, Mother, and Queen: A Bible Study Guide for Catholics</td></tr>
+<tr class="entry0"><td class="field">Memoirs Of A Medieval Woman: The Life And Times Of Margery Kempe</td></tr>
+<tr class="entry1"><td class="field">Memorize the Faith! (and Most Anything Else): Using the Methods of the Great Catholic Medieval Memory Masters</td></tr>
+<tr class="entry0"><td class="field">Memorize the Reasons!</td></tr>
+<tr class="entry1"><td class="field">Men Are Like Waffles--Women Are Like Spaghetti: Understanding and Delighting in Your Differences</td></tr>
+<tr class="entry0"><td class="field">Mere Christianity</td></tr>
+<tr class="entry1"><td class="field">Mobs, Messiahs, and Markets: Surviving the Public Spectacle in Finance and Politics</td></tr>
+<tr class="entry0"><td class="field">Mother Angelica's Little Book of Life Lessons and Everyday Spirituality</td></tr>
+<tr class="entry1"><td class="field">Mother Teresa: A Complete Authorized Biography</td></tr>
+<tr class="entry0"><td class="field">My Life with Mother Angelica</td></tr>
+<tr class="entry1"><td class="field">NTC's Easy French &amp; English Dictionary (English and French Edition)</td></tr>
+<tr class="entry0"><td class="field">New Catholic Answer Bible-NABRE-Librosario</td></tr>
+<tr class="entry1"><td class="field">Not Peace But a Sword: The Great Chasm Between Christianity and Islam</td></tr>
+<tr class="entry0"><td class="field">Old Ways of Working Wood: The Techniques and Tools of a Time Honored Craft</td></tr>
+<tr class="entry1"><td class="field">On Englishing the Bible</td></tr>
+<tr class="entry0"><td class="field">On Your Confirmation Promises for Guys: From the New International Version</td></tr>
+<tr class="entry1"><td class="field">One-Minute Aquinas</td></tr>
+<tr class="entry0"><td class="field">Orthodoxy</td></tr>
+<tr class="entry1"><td class="field">Passions and Tempers: A History of the Humours</td></tr>
+<tr class="entry0"><td class="field">Perdido Street Station</td></tr>
+<tr class="entry1"><td class="field">Pirate Freedom (Sci Fi Essential Books)</td></tr>
+<tr class="entry0"><td class="field">Pocket Book of Catholic Devotions (Pocket Book Series)</td></tr>
+<tr class="entry1"><td class="field">Pocket Book of Catholic Novenas (Pocket Book Series)</td></tr>
+<tr class="entry0"><td class="field">Pocket Book of Catholic Prayers (Pocket Book Series)</td></tr>
+<tr class="entry1"><td class="field">Pocket Gospels and Acts of the Apostles</td></tr>
+<tr class="entry0"><td class="field">Pope Fiction: Answers to 30 Myths and Misconceptions About the Papacy</td></tr>
+<tr class="entry1"><td class="field">Pot Likker, Pulley Bones, &amp; Pea Vine Hay</td></tr>
+<tr class="entry0"><td class="field">Prayers of the Saints: An Inspired Collection of Holy Wisdom</td></tr>
+<tr class="entry1"><td class="field">Reading Journal: For Book Lovers</td></tr>
+<tr class="entry0"><td class="field">Realms of Valor (A Collection of Short Stories)</td></tr>
+<tr class="entry1"><td class="field">Reed of God (Hart Library)</td></tr>
+<tr class="entry0"><td class="field">Rees Howells: Intercessor</td></tr>
+<tr class="entry1"><td class="field">Resumes Don't Get Jobs: The Realities and Myths of Job Hunting</td></tr>
+<tr class="entry0"><td class="field">Rome Sweet Home: Our Journey to Catholicism</td></tr>
+<tr class="entry1"><td class="field">Sabriel (Old Kingdom)</td></tr>
+<tr class="entry0"><td class="field">Sackett's Land</td></tr>
+<tr class="entry1"><td class="field">Scary Stories Treasury: Three Books to Chill Your Bones [Paperback compilation]</td></tr>
+<tr class="entry0"><td class="field">Science and Unreason</td></tr>
+<tr class="entry1"><td class="field">Search and Rescue: How to Bring Your Family and Friends Into or Back Into the Catholic Church</td></tr>
+<tr class="entry0"><td class="field">Secret Books of Venus I and II: Faces Under Water; Saint Fire</td></tr>
+<tr class="entry1"><td class="field">Seeds of Wealth, a Step-by-step Program to Help Young Children Begin to Build Wealth and Sound Money Habits From an Early Age</td></tr>
+<tr class="entry0"><td class="field">Sermon in a Sentence - St. John Paul II</td></tr>
+<tr class="entry1"><td class="field">Shooter's Bible: The World's Bestselling Firearms Reference</td></tr>
+<tr class="entry0"><td class="field">Sixguns by Keith: The Standard Reference Work [Illustrated Edition]</td></tr>
+<tr class="entry1"><td class="field">Soft Metal (Leisure Western)</td></tr>
+<tr class="entry0"><td class="field">Songs of the Dying Earth</td></tr>
+<tr class="entry1"><td class="field">Soul of the City: Thieves' World, Book 8.</td></tr>
+<tr class="entry0"><td class="field">St. Joseph Pocket Prayer Book</td></tr>
+<tr class="entry1"><td class="field">St. Patrick Novena and Prayers</td></tr>
+<tr class="entry0"><td class="field">St. Paul: A Bible Study Guide for Catholics</td></tr>
+<tr class="entry1"><td class="field">St. Pio of Pietrelcina Novena and Prayers</td></tr>
+<tr class="entry0"><td class="field">Stones Laid Before the Lord: A History of Monastic Architecture (Cistercian Studies)</td></tr>
+<tr class="entry1"><td class="field">Stop Clutter from Stealing Your Life: Discover Why You Clutter and How You Can Stop</td></tr>
+<tr class="entry0"><td class="field">SuperFreakonomics, Illustrated edition: Global Cooling, Patriotic Prostitutes, and Why Suicide Bombers Should Buy Life Insurance</td></tr>
+<tr class="entry1"><td class="field">Surprised by Truth: 11 Converts Give the Biblical and Historical Reasons for Becoming Catholic</td></tr>
+<tr class="entry0"><td class="field">Tai-Pan</td></tr>
+<tr class="entry1"><td class="field">Teach Yourself C Programming in 21 Days (Sams Teach Yourself)</td></tr>
+<tr class="entry0"><td class="field">Telegraph Days: A Novel</td></tr>
+<tr class="entry1"><td class="field">Ten Dates Every Catholic Should Know: The Divine Surprises and Chastisements That Shaped the Church and Changed the World</td></tr>
+<tr class="entry0"><td class="field">The Apostolic Fathers: Greek Texts and English Translations</td></tr>
+<tr class="entry1"><td class="field">The Aquinas Prayer Book: The Prayers and Hymns of St. Thomas Aquinas</td></tr>
+<tr class="entry0"><td class="field">The Black Hole War: My Battle with Stephen Hawking to Make the World Safe for Quantum Mechanics</td></tr>
+<tr class="entry1"><td class="field">The Black Swan: The Impact of the Highly Improbable (Incerto)</td></tr>
+<tr class="entry0"><td class="field">The Book of Five Rings (The Way of the Warrior Series)</td></tr>
+<tr class="entry1"><td class="field">The Book of Mormon</td></tr>
+<tr class="entry0"><td class="field">The Burden: A warning of things to come</td></tr>
+<tr class="entry1"><td class="field">The Cat Who Walks through Walls</td></tr>
+<tr class="entry0"><td class="field">The Church: Unlocking the Secrets to the Places Catholics Call Home</td></tr>
+<tr class="entry1"><td class="field">The Citadel of The Autarch</td></tr>
+<tr class="entry0"><td class="field">The Claw of the Conciliator</td></tr>
+<tr class="entry1"><td class="field">The Cult of the Saints: Its Rise and Function in Latin Christianity (The Haskell Lectures on History of Religions)</td></tr>
+<tr class="entry0"><td class="field">The Death of a Pope: A Novel</td></tr>
+<tr class="entry1"><td class="field">The Didache Bible: Ignatius Bible (RSV-2CE) Edition (Leather)</td></tr>
+<tr class="entry0"><td class="field">The Discernment of Spirits: An Ignatian Guide for Everyday Living</td></tr>
+<tr class="entry1"><td class="field">The Everlasting Man (Dover Books on Western Philosophy)</td></tr>
+<tr class="entry0"><td class="field">The Fulfillment of All Desire</td></tr>
+<tr class="entry1"><td class="field">The General Instruction of the Roman Missal (Rev. Ed.) (Liturgy Documentary)</td></tr>
+<tr class="entry0"><td class="field">The Glory of the Crusades</td></tr>
+<tr class="entry1"><td class="field">The God That Did Not Fail: How Religion Built and Sustains the West</td></tr>
+<tr class="entry0"><td class="field">The Handy Physics Answer Book</td></tr>
+<tr class="entry1"><td class="field">The Handy Science Answer Book</td></tr>
+<tr class="entry0"><td class="field">The Handy Space Answer Book</td></tr>
+<tr class="entry1"><td class="field">The Holy Bible Douay Rheims Edition</td></tr>
+<tr class="entry0"><td class="field">The Holy Bible [Douay Version] Translated from the Latin Vulgate...; the Old Testament, First Published by the English College at Douay, A.D. 1609, and the New Testament, First Published by the English College at Rheims, A.D. 1582</td></tr>
+<tr class="entry1"><td class="field">The Holy Bible: Douay-Rheims Version</td></tr>
+<tr class="entry0"><td class="field">The Holy Bible: The Old Testament Douay Version and The New Testament Confraternity Version</td></tr>
+<tr class="entry1"><td class="field">The How-To Book of the Mass: Everything You Need to Know but No One Ever Taught You</td></tr>
+<tr class="entry0"><td class="field">The Jerusalem Bible (Standard Edition)</td></tr>
+<tr class="entry1"><td class="field">The Knox Bible</td></tr>
+<tr class="entry0"><td class="field">The Land of Hidden Men (Ace Books #47012)</td></tr>
+<tr class="entry1"><td class="field">The Life of the Virgin: Maximus the Confessor</td></tr>
+<tr class="entry0"><td class="field">The Little Office of the Blessed Virgin Mary (English and Latin Edition)</td></tr>
+<tr class="entry1"><td class="field">The Lonesome Gods</td></tr>
+<tr class="entry0"><td class="field">The Lord Of The Rings Trilogy (Omnibus): The Fellowship Of The Ring, The Two Towers, The Return Of The King</td></tr>
+<tr class="entry1"><td class="field">The Lost Works of Ronald Knox</td></tr>
+<tr class="entry0"><td class="field">The Mad King</td></tr>
+<tr class="entry1"><td class="field">The Magic Goes Away</td></tr>
+<tr class="entry0"><td class="field">The Moghul</td></tr>
+<tr class="entry1"><td class="field">The Museum of Hoaxes</td></tr>
+<tr class="entry0"><td class="field">The New Testament of The Jerusalem Bible</td></tr>
+<tr class="entry1"><td class="field">The Oxford Companion to United States History (Oxford Companions)</td></tr>
+<tr class="entry0"><td class="field">The Poetry of Pope John Paul II Roman Triptych Meditations</td></tr>
+<tr class="entry1"><td class="field">The Prayers and Personal Devotions of Mother Angelica</td></tr>
+<tr class="entry0"><td class="field">The Protestant's Dilemma: How the Reformation's Shocking Consequences Point to the Truth of Catholicism</td></tr>
+<tr class="entry1"><td class="field">The Rapture Trap: A Catholic Response to "End Times" Fever</td></tr>
+<tr class="entry0"><td class="field">The Revised Standard Version Catholic Bible</td></tr>
+<tr class="entry1"><td class="field">The Sackett novels of Louis L'Amour, 4 Vol. Set</td></tr>
+<tr class="entry0"><td class="field">The Sacketts: Beginnings of a Dynasty</td></tr>
+<tr class="entry1"><td class="field">The Scar</td></tr>
+<tr class="entry0"><td class="field">The Secret Books of Venus III &amp; IV</td></tr>
+<tr class="entry1"><td class="field">The Shadow of the Torturer (The Book of the New Sun, 1)</td></tr>
+<tr class="entry0"><td class="field">The Shadow of the Torturer (Timescape)</td></tr>
+<tr class="entry1"><td class="field">The Sorcerer's House</td></tr>
+<tr class="entry0"><td class="field">The Superior Person's Book of Words</td></tr>
+<tr class="entry1"><td class="field">The Sword of the Lictor (The Book of the New Sun, vol 3)</td></tr>
+<tr class="entry0"><td class="field">The Terrible Truth About Investing: How to Be a Savvy Investor</td></tr>
+<tr class="entry1"><td class="field">The Third Day</td></tr>
+<tr class="entry0"><td class="field">The Top 100 Morgan Dollar Varieties: The VAM Keys 4th Edition</td></tr>
+<tr class="entry1"><td class="field">The Way</td></tr>
+<tr class="entry0"><td class="field">The Way of Perfection (Dover Thrift Editions)</td></tr>
+<tr class="entry1"><td class="field">The Word of God (Spiritual Thoughts)</td></tr>
+<tr class="entry0"><td class="field">The Works of Flavius Josephus: Comprising the Antiquities of the Jews; A History of the Jewish Wars; and Life of Flavius Josephus, Written By Himself. Translated from the Original Greek By William Whiston, A. M.</td></tr>
+<tr class="entry1"><td class="field">The World Treasury of Physics, Astronomy and Mathematics 1st edition by Ferris, Timothy published by Little Brown &amp; Co (T) [ Hardcover ]</td></tr>
+<tr class="entry0"><td class="field">Thieves' World</td></tr>
+<tr class="entry1"><td class="field">This Is the Faith: A Complete Explanation of the Catholic Faith</td></tr>
+<tr class="entry0"><td class="field">Time Enough For Love</td></tr>
+<tr class="entry1"><td class="field">Time Management for Catholics: Make the Most of Every Second by Putting Christ First</td></tr>
+<tr class="entry0"><td class="field">True Devotion To Mary</td></tr>
+<tr class="entry1"><td class="field">Understanding Physics (Motion, Sound, and Heat / Light, Magnetism, and Electricity / The Electron, Proton, and Neutron)</td></tr>
+<tr class="entry0"><td class="field">Unsettled: An Anthropology of the Jews</td></tr>
+<tr class="entry1"><td class="field">Waiting on God [Paperback]</td></tr>
+<tr class="entry0"><td class="field">We Hold These Truths and More: Further Catholic Reflections on the American Proposition : The Thought of Fr. John Courtney Murray, S.J. and Its Rele</td></tr>
+<tr class="entry1"><td class="field">We Hold These Truths and More: Further Catholic Reflections on the American Proposition : The Thought of Fr. John Courtney Murray, S.J. and Its Rele</td></tr>
+<tr class="entry0"><td class="field">Webster's New World Compact Japanese Dictionary: Japanese/English, English/Japanese (Japanese Edition)</td></tr>
+<tr class="entry1"><td class="field">What Catholics Really Believe: Answers to Common Misconceptions About the Faith</td></tr>
+<tr class="entry0"><td class="field">What Is Marriage?: Man and Woman: A Defense</td></tr>
+<tr class="entry1"><td class="field">Wheelock's Latin 7th Edition (The Wheelock's Latin Series)</td></tr>
+<tr class="entry0"><td class="field">Winning the Battle Against Sin: Hope-Filled Lessons from the Bible</td></tr>
+<tr class="entry1"><td class="field">Wizards: Magical Tales From the Masters of Modern Fantasy</td></tr>
+<tr class="entry0"><td class="field">World Facts (Minipedia)</td></tr>
+<tr class="entry1"><td class="field">Year's Best Fantasy</td></tr>
+</tbody>
+</table>
+<hr>
+<p><a href="http://tellico-project.org">Generated by Tellico</a></p>
 </body>
 </html>
