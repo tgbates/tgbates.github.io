@@ -73,7 +73,7 @@ Synaptic couldn't heal itself and Warned
 
 [I found a bug workaround posted that pointed a way to the solution.](https://bugs.launchpad.net/ubuntu/+source/fglrx-installer/+bug/565407)
 
-##Use the --force again and Reinstall the AMD driver!
+## Use the --force again and Reinstall the AMD driver!
 
 ```
     $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force  
