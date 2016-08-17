@@ -75,19 +75,14 @@ Synaptic couldn't heal itself and Warned
 
 ## Use the --force again and Reinstall the AMD driver!
 
-```
-    $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force  
-```<br>
-```
-    $ sudo apt-get -f install  
-```
+```    $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force  ```
+
+```    $ sudo apt-get -f install  ```
 
 ...
 
 
-```
-    restore of system environment completed
-```
+```    restore of system environment completed  ```
 
 Now Synaptic is working properly again.
 
