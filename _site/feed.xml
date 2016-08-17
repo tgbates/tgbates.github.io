@@ -6,9 +6,120 @@
 </description>
     <link>http://tgbates.com/</link>
     <atom:link href="http://tgbates.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 05 Mar 2016 07:46:50 -0600</pubDate>
-    <lastBuildDate>Sat, 05 Mar 2016 07:46:50 -0600</lastBuildDate>
+    <pubDate>Wed, 17 Aug 2016 07:56:09 -0500</pubDate>
+    <lastBuildDate>Wed, 17 Aug 2016 07:56:09 -0500</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Upgrade from Linux Mint 17.1 MATE to 17.3</title>
+        <description>&lt;h2 id=&quot;update&quot;&gt;Update&lt;/h2&gt;
+
+&lt;p&gt;I moved West to start a new job and during the chaos wasn’t updating my blog.&lt;br /&gt;
+I’m getting settled in and have been learning a lot so I should be able to throw up some more content here.&lt;br /&gt;
+I have also posted &lt;a href=&quot;https://github.com/tgbates/snow&quot;&gt;a few more ServiceNow scripts in my snow repo.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;new-office&quot;&gt;New Office&lt;/h2&gt;
+
+&lt;p&gt;I had my desktop packed up until I could set up an office at my new place.
+After unpacking it, reinstalling my hard drives and plugging in my monitors, I couldn’t get them working right.
+Either my primary monitor would work with the right resolution but the secondary wouldn’t display anything,
+or the secondary would only be a clone of the primary, which was at such a low resolution it was one step above useless.
+I also have to admit that at one point I thought I needed an adapter (was I secretly wishing for an excuse to make my first trip ever to a Fry’s?) when I really only needed my DVI cable which was tangled up with all my other cables.
+And I also plugged in my DVI and HDMI into different video cards (my previous setting, if documented with a picture in Evernote before I packed for the move, wasn’t consulted).&lt;/p&gt;
+
+&lt;h2 id=&quot;emptying-the-trash&quot;&gt;Emptying the Trash&lt;/h2&gt;
+
+&lt;p&gt;Oh, I forgot to mention that I was doing some last-minute backups before the move and managed to fill up /dev/sda1.&lt;/p&gt;
+
+&lt;p&gt;Before worrying about the dual monitors I had to boot to a command prompt and clean out the trash.
+&lt;a href=&quot;https://forums.linuxmint.com/viewtopic.php?f=90&amp;amp;t=225222#p1187583&quot;&gt;I found a little tip on how to prevent that from happening again.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;black-screens-and-elephants&quot;&gt;Black Screens and Elephants&lt;/h2&gt;
+
+&lt;p&gt;I looked at my notes on the last time I had this situation back in 2015.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;   ctrl+alt+f1 to get to terminal &lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;   $ sudo service mdm stop &lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;   $ sudo X -configure &lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;   $ sudo service mdm start &lt;/code&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;This generated a new xorg.conf file that I could move to /etc/X11 but all it really accomplished for me was getting resolution right for 1 monitor and nothing for the secondary monitor.  After having two monitors, you can’t go back to only one.&lt;/p&gt;
+
+&lt;p&gt;I’m sorry for not having more screenshots but I wasn’t in a position to capture anything but text and will refrain from pasting huge blocks of output.&lt;/p&gt;
+
+&lt;p&gt;During this monitor process (I will skip recounting my dead ends playing with cvt, xrandr, get-edid | parse-edid, modelines, and editing xorg.conf), 
+I had to blindly resort to the &lt;a href=&quot;http://www.howtogeek.com/119127/use-the-magic-sysrq-key-on-linux-to-fix-frozen-x-servers-cleanly-reboot-and-run-other-low-level-commands/&quot;&gt;Raising Elephants Is So Utterly (Obtuse/Boring) trick a few times.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;time-to-upgrade&quot;&gt;Time to Upgrade&lt;/h2&gt;
+
+&lt;p&gt;By this point I had been flailing around for about 3 hours, so I decided it was time to try something else.
+Upgrading to Mint 17.3 wasn’t really on the weekend agenda, but it did promise better multi-monitor support, so it was worth a shot.
+I didn’t see how it could make things worse, and it was only a minor upgrade and was quick and painless.  This is why I installed Linux Mint in the first place!
+It wasn’t a silver bullet, but at least it helped an aggravating problem I was having with windows missing their menu bars and spawning partially off my screen in the top left corner.&lt;/p&gt;
+
+&lt;h2 id=&quot;use-the---force&quot;&gt;Use the –force&lt;/h2&gt;
+
+&lt;p&gt;After that I thought updating my graphics drivers might help.
+Another tip: If you use proprietary graphics drivers downloaded from AMD’s website and –force the installation you will break synaptic and have to fix it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;BAD IDEA&lt;/strong&gt;—&amp;gt; &lt;code&gt;   $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Worse than that, I broke X completely when I uninstalled fglrx from the command line.&lt;/p&gt;
+
+&lt;p&gt;When I saw the results of that I reinstalled it but by then it was time to leave for church and I didn’t have time to try it out.&lt;/p&gt;
+
+&lt;p&gt;…a couple hours later, I booted up and the monitors were detected (they had been “unknown” all this time in Mint) and I was able to set up resolutions, set primary/secondary, get my panel set up correctly, etc.&lt;/p&gt;
+
+&lt;h2 id=&quot;fixing-synaptic&quot;&gt;Fixing Synaptic&lt;/h2&gt;
+
+&lt;p&gt;Synaptic couldn’t heal itself and Warned &lt;br /&gt;
+    &lt;code&gt;Uninstall : inst_path_default or inst_path_override does not exist in /etc/ati.&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/20160815_monitorsb.jpg&quot; alt=&quot;broken Synaptic&quot; title=&quot;broken synaptic&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://bugs.launchpad.net/ubuntu/+source/fglrx-installer/+bug/565407&quot;&gt;I found a bug workaround posted that pointed a way to the solution.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;use-the---force-again-and-reinstall-the-amd-driver&quot;&gt;Use the –force again and Reinstall the AMD driver!&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;
+    $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force  
+&lt;/code&gt;&lt;br /&gt;
+&lt;code&gt;
+    $ sudo apt-get -f install  
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;…&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+    restore of system environment completed
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Now Synaptic is working properly again.&lt;/p&gt;
+
+&lt;h2 id=&quot;lessons-learned&quot;&gt;Lessons Learned&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;I should have been more patient.  Impatience could have led to reinstalling my hard drives incorrectly, along with the incorrect initial monitor setup. I’m fairly certain I took a picture of my cables before the move but didn’t take the time to look for it.&lt;/li&gt;
+  &lt;li&gt;I should have uninstalled fglrx properly before installing the AMD driver (without using the –force option, which the AMD installer recommended not using).&lt;/li&gt;
+  &lt;li&gt;I didn’t always think before I acted when running commands.  This is only my personal computer, but it is still a my most important personal computer, and a useful tool that I don’t want to break irreparably.&lt;/li&gt;
+  &lt;li&gt;I ended up spending hours on this when maybe I could have only had to uninstall and reinstall fglrx if plugging the cables in right hadn’t prevented this from happening in the first place.&lt;/li&gt;
+&lt;/ul&gt;
+
+</description>
+        <pubDate>Wed, 17 Aug 2016 09:00:00 -0500</pubDate>
+        <link>http://tgbates.com/linux/2016/08/17/linux-mint-17-3-upgrade.html</link>
+        <guid isPermaLink="true">http://tgbates.com/linux/2016/08/17/linux-mint-17-3-upgrade.html</guid>
+        
+        <category>linux</category>
+        
+        <category>mint</category>
+        
+        <category>servicenow</category>
+        
+        
+        <category>linux</category>
+        
+      </item>
     
       <item>
         <title>Tellico in Linux Mint 17.1 for Library Cataloguing</title>
