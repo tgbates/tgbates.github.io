@@ -15,5 +15,17 @@ url: "http://tgbates.com" # the base hostname & protocol for your site
 twitter_username: ThomasB_AL
 github_username:  tgbates
 
+# Custom vars
+version:	2.0.0
+
 # Build settings
 markdown: kramdown
+
+# Includes an icon in the footer for each user name you enter
+footer-links:
+  github: tgbates
+  twitter: ThomasB_AL
+
+# This is the list of pages to incldue in the header of the website.
+pages_list:       {'About':'/about','Archive':'/archive','Feed':'/atom.xml'}
+

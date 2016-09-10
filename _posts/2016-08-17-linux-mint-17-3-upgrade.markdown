@@ -90,7 +90,7 @@ Now Synaptic is working properly again.
 
 * I should have been more patient.  Impatience could have led to reinstalling my hard drives incorrectly, along with the incorrect initial monitor setup. I'm fairly certain I took a picture of my cables before the move but didn't take the time to look for it.  
 * I should have uninstalled fglrx properly before installing the AMD driver (without using the --force option, which the AMD installer recommended not using).  
-* I didn't always think before I acted when running commands.  This is only my personal computer, but it is still a my most important personal computer, and a useful tool that I don't want to break irreparably.  
+* I didn't always think before I acted when running commands.  This is only my personal computer, but it is still my most important personal computer, and a useful tool that I don't want to break irreparably.  
 * I ended up spending hours on this when maybe I could have only had to uninstall and reinstall fglrx if plugging the cables in right hadn't prevented this from happening in the first place.
 
 
