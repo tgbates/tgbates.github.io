@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ServiceNow: Function for Checking an Email Whitelist Table 
+title: ServiceNow Function for Checking an Email Whitelist Table 
 date: 2016-09-30 08:00:00 -0600
 category: servicenow
 tags: [servicenow, javascript]

@@ -6,12 +6,12 @@
 </description>
     <link>http://tgbates.com/</link>
     <atom:link href="http://tgbates.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 30 Sep 2016 05:53:28 -0700</pubDate>
-    <lastBuildDate>Fri, 30 Sep 2016 05:53:28 -0700</lastBuildDate>
+    <pubDate>Fri, 30 Sep 2016 06:04:11 -0700</pubDate>
+    <lastBuildDate>Fri, 30 Sep 2016 06:04:11 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
     
       <item>
-        <title>Function For Checking An Email Whitelist Table</title>
+        <title>ServiceNow Function for Checking an Email Whitelist Table</title>
         <description>&lt;h1 id=&quot;servicenow-function-for-checking-an-email-whitelist-table&quot;&gt;ServiceNow: Function for Checking an Email Whitelist Table&lt;/h1&gt;
 &lt;p&gt;Where I work now we accept incidents submitted via email from internal and external customers.
 I recently had a requirement for a new assignment group that only wanted to accept incidents from a short list of domains.  Emails submitted to this group from other domains would not be processed into incidents.&lt;/p&gt;
@@ -67,10 +67,16 @@ If a record isn’t found, allow the incident creation as normal.&lt;/p&gt;
 
 &lt;p&gt;To whitelist new domains we only need to add another entry to the whitelist table.  The same goes for a new assignment group with a similar requirement.&lt;/p&gt;
 </description>
-        <pubDate>Thu, 29 Sep 2016 00:00:00 -0700</pubDate>
-        <link>http://tgbates.com/2016/09/29/function-for-checking-an-email-whitelist-table.html</link>
-        <guid isPermaLink="true">http://tgbates.com/2016/09/29/function-for-checking-an-email-whitelist-table.html</guid>
+        <pubDate>Fri, 30 Sep 2016 07:00:00 -0700</pubDate>
+        <link>http://tgbates.com/servicenow/2016/09/30/function-for-checking-an-email-whitelist-table.html</link>
+        <guid isPermaLink="true">http://tgbates.com/servicenow/2016/09/30/function-for-checking-an-email-whitelist-table.html</guid>
         
+        <category>servicenow</category>
+        
+        <category>javascript</category>
+        
+        
+        <category>servicenow</category>
         
       </item>
     
