@@ -6,9 +6,243 @@
 </description>
     <link>http://tgbates.com/</link>
     <atom:link href="http://tgbates.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 17 Aug 2016 07:56:09 -0500</pubDate>
-    <lastBuildDate>Wed, 17 Aug 2016 07:56:09 -0500</lastBuildDate>
+    <pubDate>Fri, 30 Sep 2016 05:53:28 -0700</pubDate>
+    <lastBuildDate>Fri, 30 Sep 2016 05:53:28 -0700</lastBuildDate>
     <generator>Jekyll v2.5.3</generator>
+    
+      <item>
+        <title>Function For Checking An Email Whitelist Table</title>
+        <description>&lt;h1 id=&quot;servicenow-function-for-checking-an-email-whitelist-table&quot;&gt;ServiceNow: Function for Checking an Email Whitelist Table&lt;/h1&gt;
+&lt;p&gt;Where I work now we accept incidents submitted via email from internal and external customers.
+I recently had a requirement for a new assignment group that only wanted to accept incidents from a short list of domains.  Emails submitted to this group from other domains would not be processed into incidents.&lt;/p&gt;
+
+&lt;p&gt;We had an existing script include and inbound action to process incoming emails already, and an easy way to handle this would be with some if statements inside the inbound action.  However, this would not be easy to maintain or update if another group wanted a similar restriction down the road.&lt;/p&gt;
+
+&lt;p&gt;So I set up an email whitelist table with a reference field to the group table, a string field for the domain, and an active flag to turn off the rule if needed.
+&lt;img src=&quot;/assets/email_whitelist.png&quot; alt=&quot;Email Whitelist table&quot; title=&quot;Email Whitelist table&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;I added a function to the existing script include to check this table.
+If the assignment group has an active record (or multiple records), check the domains.  If there is a matching whitelist rule, allow the incident to be created.
+If a record isn’t found, allow the incident creation as normal.&lt;/p&gt;
+
+&lt;p&gt;```javascript
+	checkWhitelist: function(assignment_grp, sender_domain) {
+		// assignment_grp = reference to sys_user_group table
+		// sender_domain = string
+		// lookup whitelist table and if there is an active entry, apply it
+		// if no entry returned, then allow any sender&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;	var gr = new GlideRecord('u_email_whitelist');
+	gr.addQuery('u_group', assignment_grp);		
+	gr.addQuery('u_active', true);  // if entry has been deactivated ignore it		
+	gr.query();
+	var grp_flag = false; // at least one active entry on whitelist table?
+	var match_flag = false;  // matching domain for assignment group on whitelist?
+	var i = 0;
+	while (gr.next() &amp;amp;&amp;amp; (!match_flag)) { // the group has at least one entry on the table but no match found yet
+		i++;
+		grp_flag = true;  // group entry on whitelist table
+		if (gr.u_domain == sender_domain) {
+			match_flag = true;  // sender allowed on whitelist
+		}
+		else {
+			gs.log('checkWhitelist - no match for ' + gr.u_group.name + ' : ' + gr.u_domain);
+			// sender not a match, keep looping through all matching records
+		}		
+	}
+	if (grp_flag)   { // both entries good
+		if (match_flag) {
+			gs.log('checkWhitelist - match for ' + gr.u_group.name + ' and ' + gr.u_domain);
+			return true; // there is a match and that's ok
+		}
+		return false; // there wasn't a match
+	}
+	else {
+		return true; // there wasn't a match for the grp so it's ok to accept from any domain
+	}		
+},
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;p&gt;To whitelist new domains we only need to add another entry to the whitelist table.  The same goes for a new assignment group with a similar requirement.&lt;/p&gt;
+</description>
+        <pubDate>Thu, 29 Sep 2016 00:00:00 -0700</pubDate>
+        <link>http://tgbates.com/2016/09/29/function-for-checking-an-email-whitelist-table.html</link>
+        <guid isPermaLink="true">http://tgbates.com/2016/09/29/function-for-checking-an-email-whitelist-table.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>I Found Some of My Book Reviews from Last Century</title>
+        <description>&lt;p&gt;I read a lot of books when I was in college.  I wish I had kept better records and wrote more about what I liked about them, what I learned, how they made me feel, alas.
+However, I did come across some notes in a bunch of old files that I have copied from old computer to new computer at least three times.
+I can’‘t call these reviews but they are all I wrote at the time.  These were mostly library books (dead tree, not digital, denizens of the 21st century), so I have no Kindle highlights or annotations to look up.
+If you want to remember something 20 years from now, write it down!&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;neuromancer&quot;&gt;Neuromancer&lt;/h1&gt;
+&lt;p&gt;by William Gibson&lt;/p&gt;
+
+&lt;p&gt;The Cyberpunk book that started it all.  Gibson’s 1984 version of the future
+is anarchistic and gothic and exhilirating.  The AI issue receives treatment
+as basically, if the AI’s smart enough to think, it’s smart enough to get
+Out of Control (Kevin Kelly) and does just that.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;out-of-control&quot;&gt;Out of Control&lt;/h1&gt;
+&lt;p&gt;by Kevin Kelly&lt;/p&gt;
+
+&lt;p&gt;A must-read book, even if all you read is the bibliography, which contains
+tons of books that consider the issues of AI, Complexity, Science, etc.
+Kevin Kelly asks a lot of good questions that still have me thinking.
+Read it again.&lt;/p&gt;
+
+&lt;p&gt;note: I did not read it again.  However, the issues he raised are now in our daily news feeds. -tgbates, 2016&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;count-zero----spoiler-alert&quot;&gt;Count Zero – SPOILER ALERT&lt;/h1&gt;
+&lt;p&gt;by William Gibson 
+Is the 2nd book in the trilogy (I guess it’s
+a trilogy).  Looks at the Projects in the future, has a neato little hacker
+punk who dresses very hackishly, but doesn’t know what’s going on.  I liked
+the Samurai more by the end than I did at first.  He finally decided he was
+tired of getting shot up and settled down with his dead brother’s girlfriend.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-difference-engine&quot;&gt;The Difference Engine&lt;/h1&gt;
+&lt;p&gt;by William Gibson and Bruce Sterling
+  Book concerns England in the 1850’s and on to 1905.  Sybil Gerard, daughter
+of Walter Gerard, who started a revolutionary movement but was killed, starts
+off as the main character, a typical cyberpunk character.  She doesn’t know
+much about the Engines or Kinotropes, but has a mentor in Mick Ralley, who
+does.  Unfortunately, he is killed by a Texas Ranger sent out to kill Sam
+Houston.
+  Things switch to Edward Mallory, a scientist digging up dinosaur bones.
+He shows the reader a scientist with integrity, who can kick butt, too.
+He’s the most awesome scientist I’ve ever seen in a book.  Maybe that game
+with the scientist fighting the space marines isn’t so far-out.  Of course,
+Mallory has been in Wyoming with the savages, not in a lab.
+  TDE covers topics similar to Out of Control.  The Science of Complexity is
+covered.  Examples:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;p.183 Flocking is discussed&lt;/li&gt;
+  &lt;li&gt;p.211 The use of engines for simulations to observe how things work, etc.&lt;/li&gt;
+  &lt;li&gt;p.223-224 Chaos theory explored&lt;/li&gt;
+  &lt;li&gt;p.243-245 Vivid picture of London in anarchy&lt;/li&gt;
+  &lt;li&gt;p.302 View of history as progress opposed by the Catastrophe theory&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;In the book, Inspector Ebenezer Fraser is an awesome guy, working in the
+special services (your typical secret govt agency)
+  There are some Japanese there, ready to reject their language in favor of
+English so that they can be like the English.
+  When the evil antagonist disrupts their sister’s wedding, Mallory and 2 of
+his brothers, along with Fraser, decide to take matters into their own hands,
+there being a general state of anarchy in London.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-hacker-crackdown&quot;&gt;The Hacker Crackdown:&lt;/h1&gt;
+&lt;p&gt;by Bruce Sterling&lt;/p&gt;
+
+&lt;p&gt;Looks at several sides of hacking, including law enforcement, hackers, and
+civil liberties.  Makes me side with civil liberties when I think about
+people busting in and taking my computer, disks, everything away and never
+giving them back, never going to trial, anything.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-cuckoos-egg&quot;&gt;The Cuckoo’s Egg&lt;/h1&gt;
+&lt;p&gt;by Clifford Stoll&lt;/p&gt;
+
+&lt;p&gt;His story of catching the cracker who broke in to many different computers
+from Germany.  He calls him all kinds of nasty names, talks about how these
+people are destroying the openness of the net, but also recounts how he
+stole monitors and printers and everything else to try to catch the guy,
+how he got the FBI and everybody worked up to do something about it instead
+of handling it himself, etc.  Plus he was a hippy type, cozying up with the
+feds.  Even his own friends would be worried about what he was doing.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h1 id=&quot;the-meaning-of-it-all--thoughts-of-a-citizen-scientist&quot;&gt;The Meaning Of It All:  Thoughts of a Citizen-Scientist&lt;/h1&gt;
+&lt;p&gt;by Richard P. Feynman&lt;/p&gt;
+
+&lt;p&gt;A short book consisting of 3 lectures he gave in 1963.  I’d say a must-read.
+  Talks about how science is never certain.  If it is certain, then it is
+prejudiced about new breakthroughs, etc.  A scientist can say, this is
+probably what happens, but he isn’t 100% certain.&lt;/p&gt;
+
+&lt;p&gt;note: I had a note to finish this review but never did. -tgbates, 2016&lt;/p&gt;
+
+&lt;hr /&gt;
+</description>
+        <pubDate>Wed, 21 Sep 2016 07:00:00 -0700</pubDate>
+        <link>http://tgbates.com/books/2016/09/21/i-found-some-of-my-book-reviews-from-last-century.html</link>
+        <guid isPermaLink="true">http://tgbates.com/books/2016/09/21/i-found-some-of-my-book-reviews-from-last-century.html</guid>
+        
+        <category>books</category>
+        
+        
+        <category>books</category>
+        
+      </item>
+    
+      <item>
+        <title>ServiceNow SNUG</title>
+        <description>&lt;h2 id=&quot;norcal-snug&quot;&gt;NorCal SNUG&lt;/h2&gt;
+
+&lt;p&gt;Yesterday I attended the &lt;a href=&quot;https://community.servicenow.com/events/2696&quot;&gt;NorCal SNUG at ServiceNow HQ in Santa Clara&lt;/a&gt;.&lt;br /&gt;
+When I was in Alabama I hadn’t attended any SNUGs in Birmingham, but this one was only a few miles from my new home.&lt;/p&gt;
+
+&lt;h2 id=&quot;chuck-tomasi&quot;&gt;Chuck Tomasi&lt;/h2&gt;
+
+&lt;p&gt;I enjoyed getting a chance to chat with Chuck Tomasi about the &lt;a href=&quot;https://youtu.be/z2Ebuih3srw&quot;&gt;ServiceNow Live Coding Happy Hour&lt;/a&gt; and other videos.  I followed along with this one and got the Activate/Deactivate working.  Our users aren’t necessarily employees so we have to do deactivation differently than relying on LDAP refresh dates as a surefire indicator.  Using a script include means I can have these as buttons or call the deactivate methods from a script as well.
+Later, during Chuck’s talk on ServiceNow as a Development Platform, I learned he had been driving all day to get there so I really appreciated that.&lt;/p&gt;
+
+&lt;h2 id=&quot;istanbul&quot;&gt;Istanbul&lt;/h2&gt;
+
+&lt;p&gt;We got a sneak peek at Istanbul (not Constantinople), the next major release, which should be available before the end of the year.  Next year will be Jakarta, (not Jerusalem).  The CAB workbench looked useful as a way to replace the old multi-hour meetings I used to dial into.
+I liked the automated agenda (the system at my previous company involved browsing for changes that were awaiting approval and could last 3 hours or more), and especially the idea of getting a notification when your time to speak is approaching!&lt;/p&gt;
+
+&lt;h2 id=&quot;asset-life-cycle-management&quot;&gt;Asset Life Cycle Management&lt;/h2&gt;
+
+&lt;p&gt;KPMG &amp;amp; Ebay presented their case study on asset life cycle management that included integration with SAP.  That would be a major challenge and it sounds like they devoted the resources necessary to tackle it.&lt;/p&gt;
+
+&lt;h2 id=&quot;organizational-change-management&quot;&gt;Organizational Change Management&lt;/h2&gt;
+
+&lt;p&gt;We gathered in small group discussion to talk about our own experiences.  Incidents submitted via email still seems to be a challenge for everyone.
+At my old company, we had incident creation via email disabled at Go-Live, cutting that off at the pass.  However, where I am now, we have to allow email incidents even from outside our domain, due to the nature of our business.  Incidents are about 10% spam as a result.  I implemented a business rule that might reduce it a little but am still waiting to see the results.&lt;/p&gt;
+
+&lt;h2 id=&quot;mobile-and-barcode&quot;&gt;Mobile and Barcode&lt;/h2&gt;
+&lt;p&gt;I also learned about the new barcode field type and successfully tested it in my dev instance.  Now any mobile device can be used to scan barcodes directly into ServiceNow, great for asset management and saving the expense of those bulky scanners I used to deal with at my old company.  I set up a mobile page on my dev instance with a barcode field and scanned some of my books.  The next step will be to retrieve the title and author information.&lt;/p&gt;
+
+&lt;h2 id=&quot;cancel-requested-item-ui-action&quot;&gt;Cancel Requested Item UI Action&lt;/h2&gt;
+&lt;p&gt;I’ve added a few more ServiceNow scripts to my snow repo, like the &lt;a href=&quot;https://github.com/tgbates/snow/blob/master/ui_actions/Cancel_Requested_Item.js&quot;&gt;Cancel Requested Item UI Action&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;impressions&quot;&gt;Impressions&lt;/h2&gt;
+&lt;p&gt;I thought it was a great experience attending the SNUG, and I enjoyed getting to meet people and hear about how they are using ServiceNow.  And it included two meals!  Who says TANSTAAFL?&lt;/p&gt;
+
+</description>
+        <pubDate>Tue, 23 Aug 2016 19:00:00 -0700</pubDate>
+        <link>http://tgbates.com/servicenow/2016/08/23/servicenow-snug.html</link>
+        <guid isPermaLink="true">http://tgbates.com/servicenow/2016/08/23/servicenow-snug.html</guid>
+        
+        <category>servicenow</category>
+        
+        <category>books</category>
+        
+        
+        <category>servicenow</category>
+        
+      </item>
     
       <item>
         <title>Upgrade from Linux Mint 17.1 MATE to 17.3</title>
@@ -81,18 +315,13 @@ Another tip: If you use proprietary graphics drivers downloaded from AMD’s web
 
 &lt;h2 id=&quot;use-the---force-again-and-reinstall-the-amd-driver&quot;&gt;Use the –force again and Reinstall the AMD driver!&lt;/h2&gt;
 
-&lt;p&gt;&lt;code&gt;
-    $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force  
-&lt;/code&gt;&lt;br /&gt;
-&lt;code&gt;
-    $ sudo apt-get -f install  
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;   $ sudo ./amd-driver-installer-14.20-x86.x86_64.run --force &lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;   $ sudo apt-get -f install &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;…&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;
-    restore of system environment completed
-&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;   restore of system environment completed &lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;Now Synaptic is working properly again.&lt;/p&gt;
 
@@ -101,12 +330,12 @@ Another tip: If you use proprietary graphics drivers downloaded from AMD’s web
 &lt;ul&gt;
   &lt;li&gt;I should have been more patient.  Impatience could have led to reinstalling my hard drives incorrectly, along with the incorrect initial monitor setup. I’m fairly certain I took a picture of my cables before the move but didn’t take the time to look for it.&lt;/li&gt;
   &lt;li&gt;I should have uninstalled fglrx properly before installing the AMD driver (without using the –force option, which the AMD installer recommended not using).&lt;/li&gt;
-  &lt;li&gt;I didn’t always think before I acted when running commands.  This is only my personal computer, but it is still a my most important personal computer, and a useful tool that I don’t want to break irreparably.&lt;/li&gt;
+  &lt;li&gt;I didn’t always think before I acted when running commands.  This is only my personal computer, but it is still my most important personal computer, and a useful tool that I don’t want to break irreparably.&lt;/li&gt;
   &lt;li&gt;I ended up spending hours on this when maybe I could have only had to uninstall and reinstall fglrx if plugging the cables in right hadn’t prevented this from happening in the first place.&lt;/li&gt;
 &lt;/ul&gt;
 
 </description>
-        <pubDate>Wed, 17 Aug 2016 09:00:00 -0500</pubDate>
+        <pubDate>Wed, 17 Aug 2016 07:00:00 -0700</pubDate>
         <link>http://tgbates.com/linux/2016/08/17/linux-mint-17-3-upgrade.html</link>
         <guid isPermaLink="true">http://tgbates.com/linux/2016/08/17/linux-mint-17-3-upgrade.html</guid>
         
@@ -176,7 +405,7 @@ I’ve even found it helpful to just get the books grouped into these general ca
 
 &lt;p&gt;&lt;a href=&quot;/assets/books_20160305.html&quot;&gt;Library&lt;/a&gt;&lt;/p&gt;
 </description>
-        <pubDate>Sat, 05 Mar 2016 08:00:00 -0600</pubDate>
+        <pubDate>Sat, 05 Mar 2016 06:00:00 -0800</pubDate>
         <link>http://tgbates.com/linux/2016/03/05/tellico-collection-manager.html</link>
         <guid isPermaLink="true">http://tgbates.com/linux/2016/03/05/tellico-collection-manager.html</guid>
         
@@ -223,7 +452,7 @@ I’ve even found it helpful to just get the books grouped into these general ca
 &lt;h2 id=&quot;play-music&quot;&gt;Play Music!&lt;/h2&gt;
 
 </description>
-        <pubDate>Mon, 11 Jan 2016 08:00:00 -0600</pubDate>
+        <pubDate>Mon, 11 Jan 2016 06:00:00 -0800</pubDate>
         <link>http://tgbates.com/linux/2016/01/11/midi-keyboard.html</link>
         <guid isPermaLink="true">http://tgbates.com/linux/2016/01/11/midi-keyboard.html</guid>
         
@@ -417,7 +646,7 @@ Server running... press ctrl-c to stop.
 &lt;/pre&gt;
 
 </description>
-        <pubDate>Sat, 09 Jan 2016 08:00:00 -0600</pubDate>
+        <pubDate>Sat, 09 Jan 2016 06:00:00 -0800</pubDate>
         <link>http://tgbates.com/linux/2016/01/09/jekyll-ordeal.html</link>
         <guid isPermaLink="true">http://tgbates.com/linux/2016/01/09/jekyll-ordeal.html</guid>
         
@@ -451,7 +680,7 @@ Server running... press ctrl-c to stop.
 &lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;
 
 </description>
-        <pubDate>Sat, 09 Jan 2016 04:23:02 -0600</pubDate>
+        <pubDate>Sat, 09 Jan 2016 02:23:02 -0800</pubDate>
         <link>http://tgbates.com/jekyll/update/2016/01/09/welcome-to-jekyll.html</link>
         <guid isPermaLink="true">http://tgbates.com/jekyll/update/2016/01/09/welcome-to-jekyll.html</guid>
         
