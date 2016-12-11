@@ -4,12 +4,22 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/)
+Southern-born nerd before it was cool, husband of one wife, card-carrying Catholic convert, a professional system administrator, known to wear lumberjack shirts, boots, and PPE when actually felling trees and splitting firewood, a proponent of playing outside, the swivel-arm battle grip, reading, learning, making, Linux, Liberty, and the Oxford comma.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jglovier" %} /
-[jekyll-new](https://github.com/jglovier/jekyll-new)
+<br>
+<br>
+<p>
+<h1> A Word Cloud of My Posts </h1>
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+  <div class="well">
+    <p>
+    {% for tag in site.tags %}
+       <span class="tag" style="font-size: {{ tag | last | size | times: 1000 | divided_by: site.tags.size | plus: 100 }}%">
+      {{ tag | first | replace: ' ', '-'}}
+      </span>
+    {% endfor %}
+  </p>
+  </div> <!-- /.well -->
+
+
+
